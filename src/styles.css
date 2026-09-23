@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f3e2c4;
+  --color-deep: #e4cfa6;
+  --color-surface: #fff6e4;
+  --color-ink: #2a1a12;
+  --color-muted: #6d5340;
+  --color-signal: #a67c2d;
+  --color-child: #1e5c34;
+  --font-display: "Cinzel", "Times New Roman", serif;
+  --font-sans: "Literata", "Palatino Linotype", serif;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    background: var(--color-bg);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-ink);
+    line-height: 1.5;
+  }
+
+  ::selection {
+    background: var(--color-child);
+    color: var(--color-surface);
+  }
+}
+
+@keyframes cheek-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px) rotate(-0.4deg);
+  }
+  75% {
+    transform: translateX(6px) rotate(0.4deg);
+  }
+}
+
+@keyframes cheek-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes cheek-rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cheek-shake {
+  animation: cheek-shake 0.35s ease-in-out;
+}
+
+.notice-rise {
+  animation: cheek-rise 0.35s ease-out;
+}
+
+.cloud-track {
+  animation: cheek-drift 48s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cheek-shake,
+  .notice-rise,
+  .cloud-track {
+    animation: none;
+  }
+}

@@ -1,0 +1,16 @@
+node_modules
+dist
+.output
+.vercel
+.env
+.env.*
+screenshots
+artifacts
+attachments
+*.log
+.nitro
+.grok/*
+!.grok/app-env.json
+.project_id
+.node_modules.lock
+AGENTS.md
