@@ -3,12 +3,13 @@ import { SITE, TOKEN_ADDRESS } from "@/lib/site";
 
 export function CaBox() {
   const [copied, setCopied] = useState(false);
-  const pending = TOKEN_ADDRESS == null;
+  const address = TOKEN_ADDRESS;
+  const pending = address == null;
 
   async function copy() {
-    if (pending) return;
+    if (address == null) return;
     try {
-      await navigator.clipboard.writeText(TOKEN_ADDRESS);
+      await navigator.clipboard.writeText(address);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1600);
     } catch {
@@ -25,7 +26,7 @@ export function CaBox() {
           </p>
           <div className="mt-3 border-2 border-signal bg-surface px-4 py-4 text-ink">
             <p className={pending ? "font-display text-2xl leading-none" : "break-all font-mono text-lg md:text-2xl"}>
-              {pending ? "The warrant is blank." : TOKEN_ADDRESS}
+              {pending ? "The warrant is blank." : address}
             </p>
           </div>
           <p className="mt-2 text-sm text-bg">
