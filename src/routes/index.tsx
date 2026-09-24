@@ -1,9 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import sheriff from "@/assets/sheriff.jpg";
 import market from "@/assets/market.webp";
+import { CaBox } from "@/components/ca-box";
 import { CopyLine } from "@/components/copy-line";
 import { TownBell } from "@/components/town-bell";
-import { SITE, TOKEN_ADDRESS } from "@/lib/site";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/")({ component: Home });
 
@@ -33,7 +34,9 @@ function Home() {
         </figure>
       </section>
 
-      <section className="border-y-2 border-ink">
+      <CaBox />
+
+      <section className="border-b-2 border-ink">
         <figure className="relative">
           <img
             src={market}
@@ -74,13 +77,11 @@ function Home() {
       </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-12">
-        <h2 className="font-display text-3xl">The warrant</h2>
+        <h2 className="font-display text-3xl">The wrapper</h2>
         <p className="mt-2 max-w-xl text-muted">
-          The token contract is not published. When it is, the address on this page is the token.
-          The wrapper address is not the token.
+          The dark box is the token. This line is the wrapper. They are not the same address.
         </p>
-        <div className="mt-4 flex flex-col gap-3">
-          <CopyLine label="Token contract" value={TOKEN_ADDRESS} />
+        <div className="mt-4">
           <CopyLine label={`${SITE.pair} contract`} value={SITE.pairAddress} />
         </div>
       </section>
