@@ -36,6 +36,14 @@ export function SiteShell({ children }: { children: ReactNode }) {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={SITE.x}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-ink px-3 py-2 font-display text-sm text-ink"
+            >
+              X
+            </a>
             <span className="border-2 border-child bg-child px-3 py-2 font-display text-sm text-surface">
               ${SITE.ticker}
             </span>

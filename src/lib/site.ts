@@ -11,6 +11,7 @@ export const SITE = {
   pad: "long.xyz",
   padUrl: "https://app.long.xyz",
   home: "https://cheek.lol",
+  x: "https://x.com/GyattinghamRH",
 } as const;
 
 export const NOTICES = [
