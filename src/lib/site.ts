@@ -1,4 +1,4 @@
-export const TOKEN_ADDRESS: string | null = null;
+export const TOKEN_ADDRESS: string | null = "0xdac8e08461a5bd01c68177f2d041994fe8ba1e18";
 
 export const SITE = {
   name: "Gyattingham",
